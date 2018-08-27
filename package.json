@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch --config webpack.dev.js",
-	"dev": "npm run try",
+    "dev": "npm run try",
     "try": "webpack --config webpack.dev.js",
     "start": "webpack-dev-server --open --config webpack.dev.js",
-	"prod": "npm run build",
+    "prod": "npm run build",
     "build": "webpack -p --config webpack.prod.js",
     "server": "node server.js",
     "launch": "webpack -p --config webpack.prod.js && node server.js"
@@ -52,6 +52,7 @@
   "dependencies": {
     "compression": "^1.7.3",
     "helmet": "^3.13.0",
+    "hoek": "^5.0.4",
     "lodash": "^4.17.10",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
