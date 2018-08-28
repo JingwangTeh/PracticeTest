@@ -23,6 +23,7 @@ class Test1__Presentation extends React.Component {
 			<div>
 				<div>12345abb<br/>{test}</div>
 				<div onClick={()=>{ this.props.history.push('/test2') }}>Click Me!</div>
+				<p className="abc">hello abc</p>
 			</div>
         );
 	}

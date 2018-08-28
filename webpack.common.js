@@ -6,6 +6,7 @@ const webpack = require('webpack');
 /*** Plugins ***/
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const WorkboxPlugin = require('workbox-webpack-plugin');
 //const CompressionPlugin = require("compression-webpack-plugin");
 
@@ -34,6 +35,11 @@ const cleanOptions = {
   verbose:  true,
   dry:      false
 };
+
+/* ExtractTextPlugin */
+// instances
+const extractCSS = new ExtractTextPlugin('stylesheets/[name]_CSS.css');
+const extractSCSS = new ExtractTextPlugin('stylesheets/[name]_SCSS.css');
 
 /*** END of Plugin Options ***/
 
@@ -97,6 +103,8 @@ module.exports = {
 	  filename: webpackConstants.HTML_OUTPUT_NAME,
 	  inject: 'body'
     }),
+    extractCSS,
+	extractSCSS,
 	new webpack.HashedModuleIdsPlugin(),
     new WorkboxPlugin.GenerateSW({
       // these options encourage the ServiceWorkers to get in there fast 
@@ -117,25 +125,21 @@ module.exports = {
 	  // css
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+		use: extractCSS.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
       },
 	  // sass/scss
 	  {
 		test: /\.scss$/,
-		use: [
-		  {
-			loader: "style-loader" // creates style nodes from JS strings
-		  },
-		  {
-			loader: "css-loader" // translates CSS into CommonJS
-		  },
-		  {
-			loader: "sass-loader", // compiles Sass to CSS
-		  }
-		]
+		use: extractSCSS.extract({
+          fallback: "style-loader", // creates style nodes from JS strings
+          use: [
+		    "css-loader" // translates CSS into CommonJS
+		    , "sass-loader" // compiles Sass to CSS
+		  ]
+        })
 	  },
 	  // images
 	  {
