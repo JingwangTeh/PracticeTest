@@ -15,6 +15,7 @@ const webpackConstants = require('./webpack._constants.js');
 
 // Create express server
 const server = express();
+server.set('port', process.env.PORT || 8081);
 
 
 
@@ -42,9 +43,10 @@ server.all('/*', function (req, res) {
 
 /*** Listen ***/
 
-// Serve the files on port 3000.
-server.listen(3000, 'localhost', () => {
-  console.log('dev server listening on port 3000');
-});
+// Serve the files on port 80.
+/*server.listen(8081, 'localhost', () => {
+  console.log('dev server listening on port 80');
+});*/
+server.listen(server.get('port'));
 
 
