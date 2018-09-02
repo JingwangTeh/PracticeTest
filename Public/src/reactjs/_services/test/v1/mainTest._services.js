@@ -29,7 +29,6 @@ export const mainTestServices = {
 
 
 function test() {
-	console.log(const_url.URL_TEST);
     return $.ajax({
         type: "GET",
         url: const_url.URL_TEST,
