@@ -4,21 +4,45 @@
  * Main Homepage @ mainHomepage-homepage-page.scss
  */
 
+.page-homepage {
+    padding: 15px;
+}
+
 .homepage-toc-title {
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .homepage-toc-header {
-    color: $custom-contentHeader-lightgrey;
     font-weight: bold;
-    text-align: center;
+
+    color: $custom-contentHeader-lightgrey;
+    background-color: $custom-evenRows-lightgrey;
+
+    padding: 5px 0px;
+
+    .row > div:not(:last-child) {
+        border-right: 0.5px solid lightgrey;
+    }
+
+    p {
+        padding: 0px 15px;
+    }
 }
 
 .homepage-toc-entry {
-    text-align: center;
-
+    padding: 5px 0px;
+    
     &:nth-child(even) {
         background-color: $custom-evenRows-lightgrey;
+    }
+
+    .row > div:not(:last-child) {
+        border-right: 0.5px solid lightgrey;
+    }
+
+    .homepage-toc-entryName {
+        padding: 0px 15px;
     }
 
     .homepage-toc-entryLink {

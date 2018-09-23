@@ -4,7 +4,9 @@
  * Main Footer @ mainFooter-footer-common
  */
 
-.app-footer {
-    padding: 15px 0px;
-    background-color: $color-primary;
+.app-footer {    
+    color: $color-primary-light;
+    background-color: $color-primary-dark;
+
+    padding: 15px 25px;
 }

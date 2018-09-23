@@ -16,7 +16,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        test: (text) => { dispatch(mainTestActions.test(text)); },
+        doTest: (text) => { dispatch(mainTestActions.test(text)); },
     };
 }
 

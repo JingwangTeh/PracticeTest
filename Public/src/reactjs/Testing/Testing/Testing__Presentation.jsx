@@ -10,8 +10,8 @@ class Testing__Presentation extends React.Component {
 	}
 
 	componentDidMount() {
-		if (this.props.test) {
-			this.props.test('hello there');
+		if (this.props.doTest) {
+			this.props.doTest('hello there');
 		}
 	}
 

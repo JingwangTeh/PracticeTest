@@ -13,7 +13,7 @@ class Header__Presentation extends React.Component {
 		return (
 			<div className="row no-gutters">
                 <div className="col-12">
-					<div className="app-header">
+					<div className="app-header d-flex align-items-center">
 						Header
 					</div>
 				</div>

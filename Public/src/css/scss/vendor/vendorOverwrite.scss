@@ -5,6 +5,14 @@ body {
     color: $textColor-primary;
 }
 
+img {
+    max-width: 100%;
+}
+
+.route-container-wrapper {
+    min-height: calc(100vh - 40px);
+}
+
 /* 
  * Vendor Overwrite @ vendorOverwrite.scss
  * - for overwriting vendor css

@@ -52,7 +52,7 @@ class App extends React.Component {
 			<div>
 				<Header {...this.props} />
 				
-				<div>
+				<div className="route-container-wrapper">
 					<Switch>
 						<Route exact path="/" component={(props) => <Homepage {...props} />} />
 						<Route path="/testing" component={(props) => <Testing {...props} />} />

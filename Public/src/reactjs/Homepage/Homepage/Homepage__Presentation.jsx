@@ -18,13 +18,10 @@ class Homepage__Presentation extends React.Component {
 			return (
 				<div className="homepage-toc-entry" key={idx}>
 					<div className="row">
-						<div className="col-4">
-							<p className="m-0">{content.name}</p>
-						</div>
-						<div className="col-4">
-							<p className="m-0 d-inline-block homepage-toc-entryLink" 
+						<div className="col-8">
+							<p className="m-0 d-inline-block homepage-toc-entryLink homepage-toc-entryName" 
 								onClick={()=>{ func_navigation.historyPushToURL(this.props, content.link) }}>
-								Name
+								{content.name}
 							</p>
 						</div>
 						<div className="col-4">
@@ -36,7 +33,7 @@ class Homepage__Presentation extends React.Component {
 		});
 
 		return (
-			<div className="container">
+			<div className="container page-homepage">
 
 				<div className="row">
 					<div className="col-12">
@@ -53,11 +50,8 @@ class Homepage__Presentation extends React.Component {
 						<div className="homepage-toc-header">
 
 							<div className="row">
-								<div className="col-4">
+								<div className="col-8">
 									<p className="m-0">Title</p>
-								</div>
-								<div className="col-4">
-									<p className="m-0">Link</p>
 								</div>
 								<div className="col-4">
 									<p className="m-0">Remark</p>
