@@ -16,6 +16,8 @@ import Loadable from 'react-loadable';
 import { PageLoaderComponent as ReactLoadableComponent, 
 		 NotFoundPageErrorComponent as NotFoundErrorComponent } from '../_components';
 
+import { Header, Footer } from '../_shared';
+
 
 
 /*
@@ -48,7 +50,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<div>Header</div>
+				<Header {...this.props} />
 				
 				<div>
 					<Switch>
@@ -58,7 +60,7 @@ class App extends React.Component {
 					</Switch>
 				</div>
 
-				<div>Footer</div>
+				<Footer {...this.props} />
 			</div>
 		);
 	}
