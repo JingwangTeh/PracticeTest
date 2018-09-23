@@ -24,13 +24,12 @@ export const mainTestActions = {
 function addTodo(text) {
     return dispatch => {
         // dispatch(request());
-        
         mainTestServices.test()
             .then(
                 details => {
-                    // toastr.success("Sucess", "Successfully add to cart");
-                    // dispatch(success());
                     dispatch(test(details));
+                    // dispatch(success());
+                    // toastr.success("Sucess", "Successfully...");
                 },
                 error => {
                     dispatch(test('Failed'));

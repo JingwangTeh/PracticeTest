@@ -1,0 +1,21 @@
+/* 
+ * Site color palette @ _color.scss
+ */
+
+// Primary Color
+$color-primary: black;
+
+// Secondary Color
+$color-seconday: white;
+
+// Accent Color
+$color-accent: blue;
+
+// Color for links
+$color-link: $color-primary;
+
+// Color for differentiating even rows
+$custom-evenRows-lightgrey: rgba(239, 239, 239, 0.75); // #EFEFEF
+
+// Color for content heading (much lighter grey)
+$custom-contentHeader-lightgrey: #8f8f9b;

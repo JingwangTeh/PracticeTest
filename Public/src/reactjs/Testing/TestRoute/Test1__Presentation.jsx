@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { func_navigation } from '../../_functions';
+
 
 
 class Test1__Presentation extends React.Component {
@@ -11,9 +13,6 @@ class Test1__Presentation extends React.Component {
 		if (this.props.addToDo) {
 			this.props.addToDo('hello there');
 		}
-
-		//const { history } = this.props;
-		//history.push('/abc');
 	}
 
 	render() {
@@ -22,7 +21,7 @@ class Test1__Presentation extends React.Component {
 		return (
 			<div>
 				<div>12345abb<br/>{test}</div>
-				<div onClick={()=>{ this.props.history.push('/test2') }}>Click Me!</div>
+				<div onClick={()=>{ func_navigation.historyPushToURL(this.props, '/test2') }}>Click Me!</div>
 				<p className="abc">hello abc</p>
 			</div>
         );

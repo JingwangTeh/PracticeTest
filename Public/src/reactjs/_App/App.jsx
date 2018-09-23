@@ -19,14 +19,6 @@ import { PageLoaderComponent as ReactLoadableComponent,
 
 
 /*
- * Functions
- */
- 
-// import { mainUtilityFunctions as func_mainUtility } from '../_functions';
-
-
-
-/*
  * Lazy-load Components 
  */
 
@@ -51,9 +43,6 @@ class App extends React.Component {
 	}
 	
 	render() {
-		// test
-		// func_mainUtility.appendComp();
-		
 		return (
 			<div>
 				<div>Header</div>

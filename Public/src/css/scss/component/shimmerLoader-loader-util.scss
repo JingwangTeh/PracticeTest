@@ -1,0 +1,30 @@
+@import '../partials/_mainPartial.scss';
+
+/* 
+ * Shimmering Loader @ shimmerLoader-loader-util.scss
+ */
+
+// Loading Shimmer
+@keyframes loadingShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+.animated-shimmerLoader {
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: loadingShimmer;
+    animation-timing-function: linear;
+    background: darkgray;
+    background: linear-gradient(to right, #eeeeee 10%, #dddddd 18%, #eeeeee 33%);
+    background-size: 100vw 104px;
+    height: 100px;
+    position: relative;
+    display: block;
+}
+
