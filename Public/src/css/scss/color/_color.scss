@@ -3,16 +3,27 @@
  */
 
 // Primary Color
-$color-primary: black;
+$color-primary: #03A9F4;
+$color-primary-light: #B3E5FC;
+$color-primary-dark: #0288D1;
 
 // Secondary Color
-$color-seconday: white;
+//...
 
 // Accent Color
-$color-accent: blue;
+$color-accent: #009688;
+
+// Text Color
+$textColor-primary: #212121;
+$textColor-secondary: #757575;
+$textColor-icon: #FFFFFF;
+
+// Divider Color
+$dividerColor-primary: #BDBDBD;
 
 // Color for links
-$color-link: $color-primary;
+$linkColor-primary-light: $color-primary-light;
+$linkColor-primary-dark: $color-primary-dark;
 
 // Color for differentiating even rows
 $custom-evenRows-lightgrey: rgba(239, 239, 239, 0.75); // #EFEFEF

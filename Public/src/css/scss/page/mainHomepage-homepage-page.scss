@@ -1,0 +1,28 @@
+@import '../partials/_mainPartial.scss';
+
+/* 
+ * Main Homepage @ mainHomepage-homepage-page.scss
+ */
+
+.homepage-toc-title {
+    text-align: center;
+}
+
+.homepage-toc-header {
+    color: $custom-contentHeader-lightgrey;
+    font-weight: bold;
+    text-align: center;
+}
+
+.homepage-toc-entry {
+    text-align: center;
+
+    &:nth-child(even) {
+        background-color: $custom-evenRows-lightgrey;
+    }
+
+    .homepage-toc-entryLink {
+        cursor: pointer;
+        color: $linkColor-primary-dark;
+    }
+}

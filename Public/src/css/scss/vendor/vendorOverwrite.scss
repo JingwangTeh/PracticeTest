@@ -1,5 +1,10 @@
 @import '../partials/_mainPartial.scss';
 
+body {
+    font-size: 14px;
+    color: $textColor-primary;
+}
+
 /* 
  * Vendor Overwrite @ vendorOverwrite.scss
  * - for overwriting vendor css

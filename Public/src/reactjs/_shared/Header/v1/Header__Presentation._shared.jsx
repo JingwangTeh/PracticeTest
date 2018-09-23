@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../../../../css/scss/common/mainHeader-header-common.scss';
+
 
 
 class Header__Presentation extends React.Component {
@@ -9,8 +11,12 @@ class Header__Presentation extends React.Component {
 
 	render() {
 		return (
-			<div>
-                Header
+			<div className="row no-gutters">
+                <div className="col-12">
+					<div className="app-header">
+						Header
+					</div>
+				</div>
 			</div>
         );
 	}

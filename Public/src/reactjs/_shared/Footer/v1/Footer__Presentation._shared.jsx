@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../../../../css/scss/common/mainFooter-footer-common.scss';
+
 
 
 class Footer__Presentation extends React.Component {
@@ -9,8 +11,12 @@ class Footer__Presentation extends React.Component {
 
 	render() {
 		return (
-			<div>
-                Footer
+			<div className="row no-gutters">
+                <div className="col-12">
+					<div className="app-footer">
+						Footer
+					</div>
+				</div>
 			</div>
         );
 	}
