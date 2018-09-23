@@ -57,120 +57,127 @@ module.exports = {
 	publicPath: '/',
   },
   optimization: {
-	runtimeChunk: 'single',
-	splitChunks: {
-	  cacheGroups: {
-	    vendor: {
-          test: /node_modules/,
-		  name: 'vendors',
-          chunks: 'all',
-		  reuseExistingChunk: true,
-		  enforce: true,
-		  priority: 1,
-	    },
-		lodash: {
-		  test: /lodash/,
-		  name: 'lodash',
-		  chunks: 'all',
-		  enforce: true,
-		  priority: 10,
-		},
-		reactDom: {
-		  test: /(react-dom)/,
-		  name: 'reactDom',
-		  chunks: 'all',
-		  priority: 10,
-		},
-		reactRouter: {
-		  test: /(react-router|react-router-dom)/,
-		  name: 'reactRouter',
-		  chunks: 'all',
-		  priority: 10,
-		},
-		reactRedux: {
-		  test: /(redux|react-redux|react-router-redux)/,
-		  name: 'reactRedux',
-		  chunks: 'all',
-		  priority: 10,
+		runtimeChunk: 'single',
+		splitChunks: {
+			cacheGroups: {
+				vendor: {
+					test: /node_modules/,
+					name: 'vendors',
+					chunks: 'all',
+					reuseExistingChunk: true,
+					enforce: true,
+					priority: 1,
+				},
+				lodash: {
+					test: /lodash/,
+					name: 'lodash',
+					chunks: 'all',
+					enforce: true,
+					priority: 10,
+				},
+				reactDom: {
+					test: /(react-dom)/,
+					name: 'reactDom',
+					chunks: 'all',
+					priority: 10,
+				},
+				reactRouter: {
+					test: /(react-router|react-router-dom)/,
+					name: 'reactRouter',
+					chunks: 'all',
+					priority: 10,
+				},
+				reactRedux: {
+					test: /(redux|react-redux|react-router-redux)/,
+					name: 'reactRedux',
+					chunks: 'all',
+					priority: 10,
+				}
+			}
 		}
-	  }
-	}
   },
   plugins: [
-	new CleanWebpackPlugin(pathsToClean, cleanOptions),
+    new CleanWebpackPlugin(pathsToClean, cleanOptions),
     new HtmlWebpackPlugin({
-	  template: webpackConstants.PATH_HTML_TEMPLATE,
-	  filename: webpackConstants.HTML_OUTPUT_NAME,
-	  inject: 'body'
+      template: webpackConstants.PATH_HTML_TEMPLATE,
+      filename: webpackConstants.HTML_OUTPUT_NAME,
+      inject: 'body'
     }),
     extractCSS,
-	extractSCSS,
-	new webpack.HashedModuleIdsPlugin(),
+    extractSCSS,
+    new webpack.HashedModuleIdsPlugin(),
     new WorkboxPlugin.GenerateSW({
       // these options encourage the ServiceWorkers to get in there fast 
       // and not allow any straggling "old" SWs to hang around
       clientsClaim: true,
       skipWaiting: true
     }),
-	//new CompressionPlugin()
+    //new CompressionPlugin()
   ],
   module: {
-     rules: [
-	  // js, jsx
-	  {
+    rules: [
+	    // js, jsx
+      {
         test: /\.js[x]?$/,
-		loader: 'babel-loader',
+		    loader: 'babel-loader',
         exclude: /(node_modules|bower_components)/,
       },
-	  // css
+	    // css
       {
         test: /\.css$/,
-		use: extractCSS.extract({
+		    use: extractCSS.extract({
           fallback: "style-loader",
           use: "css-loader"
         })
       },
-	  // sass/scss
-	  {
-		test: /\.scss$/,
-		use: extractSCSS.extract({
-          fallback: "style-loader", // creates style nodes from JS strings
-          use: [
-		    "css-loader" // translates CSS into CommonJS
-		    , "sass-loader" // compiles Sass to CSS
-		  ]
-        })
-	  },
-	  // images
-	  {
+	    // sass/scss
+	    {
+				test: /\.scss$/,
+				use: [{
+						loader: "style-loader" // creates style nodes from JS strings
+				}, {
+						loader: "css-loader" // translates CSS into CommonJS
+				}, {
+						loader: "sass-loader" // compiles Sass to CSS
+				}]
+		    // use: extractSCSS.extract({
+        //   fallback: "style-loader", // creates style nodes from JS strings
+        //   use: [
+		    //     "css-loader" // translates CSS into CommonJS
+		    //   , "sass-loader" // compiles Sass to CSS
+		    //   ]
+        // })
+	    },
+	    // images
+	    {
         test: /\.(png|svg|jpg|gif)$/,
-		use: [
-		  {
-			loader: 'url-loader',
-			options: {
-			  limit: 8192
-			}
-		  },
-		  {
-			loader: 'file-loader',
-		  }
-		]
-	  },
-	  // font
+		    use: [
+		      {
+			      loader: 'url-loader',
+		        options: {
+			        limit: 8192
+			      }
+		      },
+		      {
+			      loader: 'file-loader',
+		      }
+		    ]
+	    },
+	    // font
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           'file-loader'
         ]
       },
-	  // csv
+	    // csv
       {
         test: /\.(csv|tsv)$/,
         use: [
           'csv-loader'
         ]
       },
-	  // xml
+	    // xml
       {
         test: /\.xml$/,
         use: [
@@ -180,12 +187,12 @@ module.exports = {
     ]
   },
   resolve: {
-	extensions: ['.js', '.jsx'],
-	modules: [
-		webpackConstants.PATH_SRC,
-		webpackConstants.PATH_NODE_MODULES,
-		webpackConstants.PATH_PUBLIC,
-	]
+	  extensions: ['.js', '.jsx'],
+    modules: [
+      webpackConstants.PATH_SRC,
+      webpackConstants.PATH_NODE_MODULES,
+      webpackConstants.PATH_PUBLIC,
+		]
   },
   // watch options
   watchOptions: {

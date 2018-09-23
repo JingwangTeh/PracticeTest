@@ -1,2 +1,3 @@
-export * from './test';
 export * from './url';
+export * from './text';
+export * from './test';

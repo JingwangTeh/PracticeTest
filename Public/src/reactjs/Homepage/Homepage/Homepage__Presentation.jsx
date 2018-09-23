@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { func_navigation } from '../../_functions';
+import { func_validation, func_navigation } from '../../_functions';
+import { mainTextConstants } from '../../_constants';
 
 import '../../../css/scss/page/mainHomepage-homepage-page.scss';
 
@@ -12,14 +13,11 @@ class Homepage__Presentation extends React.Component {
 	}
 
 	render() {
-		const toc_array = [
-			{ name:'test', link:'/testing', remark:'nothing' }
-		];
-
+		const toc_array = func_validation.isArrayNotEmpty(mainTextConstants.toc)?mainTextConstants.toc:[];
 		let toc = toc_array.map((content, idx)=>{
 			return (
-				<div className="homepage-toc-entry">
-					<div className="row" key={idx}>
+				<div className="homepage-toc-entry" key={idx}>
+					<div className="row">
 						<div className="col-4">
 							<p className="m-0">{content.name}</p>
 						</div>

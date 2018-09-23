@@ -20,7 +20,7 @@ module.exports = merge(common, {
   mode: "production",
   output: {
     filename: "[name].[chunkhash].bundle.js",
-	chunkFilename: "[name].[chunkhash].chunk.js",
+	  chunkFilename: "[name].[chunkhash].chunk.js",
   },
   devtool: 'source-map',
   plugins: [
@@ -29,11 +29,11 @@ module.exports = merge(common, {
     }),
     new UglifyJSPlugin({
       sourceMap: true,
-	  uglifyOptions: {
-		output: {
-		  comments: false,
-		}
-	  }
+	    uglifyOptions: {
+		    output: {
+		      comments: false,
+		    }
+	    }
     }),
     //new CompressionPlugin(),
   ]

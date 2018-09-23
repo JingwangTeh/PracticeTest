@@ -1,0 +1,1 @@
+export * from './mainText._constants.js';
