@@ -16,12 +16,12 @@ import { mainTestServices } from '../../../_services';
 
 
 export const mainTestActions = {
-    addTodo
+    test
 }
 
 
 
-function addTodo(text) {
+function test(text) {
     return dispatch => {
         // dispatch(request());
         mainTestServices.test()
@@ -42,5 +42,5 @@ function addTodo(text) {
             )
     };
     
-    function test(details) { return { type: mainTestConstants.ADD_TODO, details } };
+    function test(details) { return { type: mainTestConstants.TEST, details } };
 }

@@ -22,12 +22,15 @@ import { PageLoaderComponent as ReactLoadableComponent,
  * Lazy-load Components 
  */
 
-const Test1 = Loadable({
-    loader: () => import('../Testing/TestRoute/Test1' /* webpackChunkName: 'test1' */).then(module => module.Test1),
+//  Homepage
+const Homepage = Loadable({
+    loader: () => import('../Homepage/Homepage/Homepage' /* webpackChunkName: 'homepage' */).then(module => module.Homepage),
 	loading: ReactLoadableComponent
 });
-const Test2 = Loadable({
-    loader: () => import('../Testing/TestRoute/Test2' /* webpackChunkName: 'test2' */).then(module => module.Test2),
+
+// Testing
+const Testing = Loadable({
+    loader: () => import('../Testing/Testing/Testing' /* webpackChunkName: 'testing' */).then(module => module.Testing),
 	loading: ReactLoadableComponent
 });
 
@@ -49,9 +52,8 @@ class App extends React.Component {
 				
 				<div>
 					<Switch>
-						<Route exact path="/" component={(props) => <Test1 {...props} />} />
-						<Route path="/test1" component={(props) => <Test1 {...props} />} />
-						<Route path="/test2" component={(props) => <Test2 {...props} />} />
+						<Route exact path="/" component={(props) => <Homepage {...props} />} />
+						<Route path="/testing" component={(props) => <Testing {...props} />} />
 						<Route component={NotFoundErrorComponent} />
 					</Switch>
 				</div>

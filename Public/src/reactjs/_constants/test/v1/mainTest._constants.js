@@ -1,5 +1,5 @@
 export const mainTestConstants = {
     
-    ADD_TODO: 'ADD_TODO',
+    TEST: 'TEST',
 
 };

@@ -18,13 +18,9 @@ export function mainTestReducer(state = {}, action) {
     switch (action.type) {
 
         // TODO
-        case mainTestConstants.ADD_TODO:
+        case mainTestConstants.TEST:
             return { ...state, test:action.details };
 
-        // ...
-        // case mainTestConstants.TEST:
-        //     return { ...state, test:action.details };
-    
 
 
         // DEFAULT

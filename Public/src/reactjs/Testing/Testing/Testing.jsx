@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import { mainTestActions } from '../../_actions';
 
-import { Test1__Presentation } from './Test1__Presentation' ;
+import { Testing__Presentation } from './Testing__Presentation';
 
 
 
@@ -16,14 +16,14 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        addToDo: (text) => { dispatch(mainTestActions.addTodo(text)); },
+        test: (text) => { dispatch(mainTestActions.test(text)); },
     };
 }
 
 
 
-const Test1 = connect(mapStateToProps, mapDispatchToProps)(Test1__Presentation);
+const Testing = connect(mapStateToProps, mapDispatchToProps)(Testing__Presentation);
 
 
 
-export { Test1 };
+export { Testing };
